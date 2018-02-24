@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <base href="/login/" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=.85">
+    <title>Authentication Portal</title>
+    <!--[if IE]>
+    <script type="text/javascript">
+        (function() {
+            var baseTag = document.getElementsByTagName('base')[0];
+            if (!(/^http/i).test(baseTag.href)) {
+                baseTag.href = location.protocol + '//' +  location.host +  baseTag.href;
+            }
+            baseTag.href = baseTag.href;
+        })();
+    </script>
+    <![endif]-->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/latofonts.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel="stylesheet" href="css/ie10-viewport-bug-workaround.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="javascript:void(0);"><img class="logo" src="images/logo-pan-ced5d5.png" alt=""> <span>Authentication Portal</span></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="auth_portal container">
+      <div class="row">
+        <h1 id="page_title">Login Required</h1>
+      </div>
+      <div class="row">
+        <div class="user_id instructions col-md-8">
+          <p>The resource you are trying to access requires proper user identification.</p>
+          <p>Please enter your credentials.</p>
+          <p id="authEnforcedMsg"></p>
+          <!-- Note: uncomment this line below to add info link
+          <p><a href="javascript:void(0);">Why am I seeing this?</a></p>
+          -->
+        </div>
+        <div class="login_fields col-md-4">
+          <div id="formdiv">
+            <form name="login_form" id="login_form" method="post">
+<input type="hidden" name="inputStr" value="">
+<input type="hidden" name="escapeUser" value="">
+<input type="hidden" name="preauthid" value="">
+<div id="taLogin">
+<table>
+ <tr id="dUserName">
+ <td id="userTitle">User</td>
+ <td>
+   <input type="text" id="user" name="user" size="19">
+ </td>
+ </tr>
+ <tr>
+   <td id="passwdTitle">Password</td>
+ <td>
+   <div id="dInputStr" style="display: none;">
+   <br>
+   </div>
+  <input type="password" maxlength="255" size="19" id="passwd" name="passwd">
+ </td>
+ </tr>
+ <tr>
+  <td id="buttonOffset"></td>
+  <td>
+   <input class="buttonFixed" type="submit" id="submit" name="ok" value="Login">
+  </td>
+  </tr>
+</table>
+</div>
+<div id="dError" class="msg" style="display:none"></div>
+</form>
+<!--[if IE]>
+    <script type="text/javascript">
+        (function() {
+            var baseTag = document.getElementsByTagName('base')[0];
+            if (!(/^http/i).test(baseTag.href)) { // in case browser already translate to absolute path
+                baseTag.href = location.protocol + '//' +  location.host +  baseTag.href;
+            }
+            baseTag.href = baseTag.href; // IE9 not correctly loading resources issue.
+        })();
+    </script>
+<![endif]-->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+<![endif]-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+ var username = "";
+ var errMsg = "";
+ var respStatus = "Error";
+ var respMsg = "Invalid username or password";
+ var authEnforcedMsg = " ";
+ var privatebrowsing = "";
+ function submitClicked() {
+  $('#dError').html('');
+  $('#dError').hide();
+  $('#formdiv').css('visibility', 'hidden');
+  var thisForm = document.getElementById('login_form');
+  thisForm.inputStr.value = "";
+  thisForm.preauthid.value = "Ñ";
+  thisForm.escapeUser.value = thisForm.user.value.replace(/\\/g, "\\\\");
+ }
+ function onClickHandler() {
+  submitClicked();
+ }
+ $(document).ready(function() {
+   $('#user').val(username);
+   if ($('#user').val() == '') {
+     $('#user').focus();
+   }
+   $('#dError').hide();
+   if (respStatus == 'Error') {
+      if (respMsg != '') {
+       errMsg += '<br>';
+       errMsg += '<li>' + respMsg + '</li>';
+      }
+   } else if (respStatus == 'Challenge') {
+      $('#dUserName, #passwdTitle, #buttonOffset').hide();
+      $('#dInputStr').show();
+      $('#dInputStr').html(respMsg);
+   }
+   if (errMsg != '') {
+      $('#dError').show();
+      $('#dError').html(errMsg);
+   }
+    if (privatebrowsing != '') {
+      $('#dError').show();
+      $('#dError').html(errMsg+ '<br>' + privatebrowsing);
+   }
+   if (authEnforcedMsg != '') {
+      $('#authEnforcedMsg').html(authEnforcedMsg);
+   }
+   $('#submit').attr('disabled', true);
+   $('#user').focus();
+   $('#login_form').bind('keyup click', function() {
+   if (!$('#user').val() || !$('#passwd').val()) {
+       $('#submit').attr('disabled', true);
+   } else {
+       $('#submit').attr('disabled', false);
+       $('#dError').hide();
+   }
+   });
+   $('#login_form').submit(function() {
+           submitClicked();
+   });
+   });
+   $(window).bind("pageshow", function(event) {
+    if (event.originalEvent.persisted) {
+        window.location.reload();
+        }
+   });
+   if(typeof(Storage) != "undefined") {
+       var orig_url = "";
+       try { 
+        sessionStorage.setItem ("isoffline", 0); 
+        if(orig_url != "")
+           sessionStorage.setItem("origurl", orig_url); 
+       } catch(e) {
+            privatebrowsing = "This page is not compatible in private browsing.                Please turn off private browsing and reload this page";
+       }
+    }
+</script>
+
+
+            <!-- Note: uncomment this section below to add help links
+            <ul>
+              <li><a href="javascript:void(0);">Forgot password</a></li>
+              <li><a href="javascript:void(0);">Change password</a></li>
+              <li><a href="javascript:void(0);">Need help?</a></li>
+            </ul>
+            -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Customizations - pass in values below
+      var favicon = '';
+      var logo = '';
+      var navbar_text_color = '';
+      var navbar_bg_color = '';
+      var bg_color = '';
+      var auth_portal_name = '';
+      var page_title = '';
+
+      /* --- BEGIN Customizations - replacement code --- */
+      $(document).ready(function() {
+        if ((favicon != null) && (favicon != '')) {
+          $('link[rel="shortcut icon"]').attr('href', favicon);
+        }
+
+        if ((logo != null) && (logo != '')) {
+          $('.navbar-brand .logo').attr('src', logo);
+        }
+
+        if ((navbar_text_color != null) && (navbar_text_color != '')) {
+          $('.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a > .nav-carat').css('color', navbar_text_color);
+
+          $('.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a > .nav-carat').css('opacity', '.7');
+
+          $('.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a > .nav-carat').mouseover(function() {
+            $(this).css('opacity', '1');
+          });
+
+          $('.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a > .nav-carat').mouseout(function() {
+            $(this).css('opacity', '.7');
+          });
+        }
+
+        if ((navbar_bg_color != null) && (navbar_bg_color != '')) {
+          $('.navbar-default').css('background', navbar_bg_color);
+        }
+
+        if ((bg_color != null) && (bg_color != '')) {
+          $('body').css('background', bg_color);
+        }
+
+        if ((auth_portal_name != null) && (auth_portal_name != '')) {
+          $('.navbar-brand span').html(auth_portal_name);
+        }
+
+        if ((page_title != null) && (page_title != '')) {
+          $('#page_title').html(page_title);
+        }
+      });
+      /* --- END Customizations - replacement code --- */
+
+    </script>
+  </body>
+</html>
+ Ð—ìê–™      ZêZê>Åöñ       j    ~1519410165,:https://ptcpportal.persistent.com:6082/php/uid.php?vsys=1&rule=4&url=http://www.google.com%2f necko:classified 1 security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojH6pBabDSgSnsfLHeAAQAAgAAAAAAAAAAAAAAAAAAAAAB4vFIJp5wRkeyPxAQ9RJGKPqbqVvKO0mKuIl8ec8o/uhmCjImkVxP+7sgiYWmMt8F+O2DZM7ZTG6GukivU8OT5gAAAAAAAAU5MIIFNTCCBB2gAwIBAgIITyODRRDywTAwDQYJKoZIhvcNAQELBQAwgbQxCzAJBgNVBAYTAlVTMRAwDgYDVQQIEwdBcml6b25hMRMwEQYDVQQHEwpTY290dHNkYWxlMRowGAYDVQQKExFHb0RhZGR5LmNvbSwgSW5jLjEtMCsGA1UECxMkaHR0cDovL2NlcnRzLmdvZGFkZHkuY29tL3JlcG9zaXRvcnkvMTMwMQYDVQQDEypHbyBEYWRkeSBTZWN1cmUgQ2VydGlmaWNhdGUgQXV0aG9yaXR5IC0gRzIwHhcNMTYwMzIxMTExNTM4WhcNMTgwMzI4MTA0MDM2WjA+MSEwHwYDVQQLExhEb21haW4gQ29udHJvbCBWYWxpZGF0ZWQxGTAXBgNVBAMMECoucGVyc2lzdGVudC5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCg20byBE15c3mYPfgiskS7rAweyAY0ktOe6QbmIUpEvIQgDqw3Dvip7j9bG7+dqwQcyLUZnZJgRakM7eAfbi9KEa/lSI+TaBcWbSCnGqWKVM5MZtZTacJE7SvmuPSiz6KA9bpQxqwGrlWOPi7IqM+tfuwZCG4ntgSq72hzHu6Rm2mVtX0k1X/9vEYP1HTrZbtbbA8mTdYhLAohgWdFauABP+opFheuA0QK0G0vLTGct4d5UY2pSfzYKTyFx5hKmmlxXSzPFcSkNQH7wr+Kex9g5BjDCdjA5mm2kf+zO1yM5ULCAmhCT2uAp3pIOfMJLbY81ysrxPeI698INl7izc39AgMBAAGjggG+MIIBujAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAOBgNVHQ8BAf8EBAMCBaAwNwYDVR0fBDAwLjAsoCqgKIYmaHR0cDovL2NybC5nb2RhZGR5LmNvbS9nZGlnMnMxLTIxMi5jcmwwXQYDVR0gBFYwVDBIBgtghkgBhv1tAQcXATA5MDcGCCsGAQUFBwIBFitodHRwOi8vY2VydGlmaWNhdGVzLmdvZGFkZHkuY29tL3JlcG9zaXRvcnkvMAgGBmeBDAECATB2BggrBgEFBQcBAQRqMGgwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmdvZGFkZHkuY29tLzBABggrBgEFBQcwAoY0aHR0cDovL2NlcnRpZmljYXRlcy5nb2RhZGR5LmNvbS9yZXBvc2l0b3J5L2dkaWcyLmNydDAfBgNVHSMEGDAWgBRAwr0njsw0gzCiM9f7bLPwtCyAzjArBgNVHREEJDAighAqLnBlcnNpc3RlbnQuY29tgg5wZXJzaXN0ZW50LmNvbTAdBgNVHQ4EFgQU0Jnihgq9MN4NB1m+chcAjXx2FmAwDQYJKoZIhvcNAQELBQADggEBALELjHu3+arT5qFsDBDbcRl5YWi9h0qNr13kMKBWV2p3Qi4lZ711LFa9hzvTkoKUOVCEIXtc2LSNJd45/hSpzbAumkPTWRk8VX4hXyEhvsSjCThqdDgB1OVa5ZfmP+5YKDepQ/0v+yfQrNVv/Mlx72/baDF1MPyAQSwbuvW6gajS72k9c+7m+p8g8Krhm3d6RWa8qZ0mOKQQPnXUBJpXa/OO+dzrXC1uLytCP/alPa9iNMNDHuahuWxB2odbXVvQ81kHLmnrgR9wFZ8Mlna1QTl9Zqk4H6TFSBU1u/jZPhfBEVOmQqNj8KN/4MFg61kLu5YE8g91y+XMchfqE6+hiTnAFAADAAAAAAEBAAA= request-method POST response-head HTTP/1.1 200 OK
+Date: Fri, 23 Feb 2018 12:54:02 GMT
+Content-Type: text/html
+Content-Length: 8598
+Cache-Control: no-cache
+ charset windows-1252 uncompressed-len 0   !–

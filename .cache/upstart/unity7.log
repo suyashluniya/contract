@@ -1,0 +1,45 @@
+
+(process:2331): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(process:2477): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(process:2661): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+WARN  2018-02-24 08:36:16 unity.iconloader IconLoader.cpp:756 Unable to load icon file:/// at size -1x22: Can't open directory
+
+(process:2799): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+ERROR 2018-02-24 08:39:07 unity <unknown>:0 unity::appstream::Application::Application(const string&): assertion 'as_app' failed
+WARN  2018-02-24 08:39:07 unityct(io) <unknown>:0 Unable to load keyfile from file '[Invalid UTF-8]': No such file or directory
+
+(nautilus:2948): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+
+(nautilus:2948): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+
+(nautilus:2948): Gtk-CRITICAL **: gtk_icon_theme_get_for_screen: assertion 'GDK_IS_SCREEN (screen)' failed
+
+(nautilus:2948): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(nautilus:2948): GLib-GObject-CRITICAL **: g_signal_connect_object: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(process:3019): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(process:3072): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(process:3123): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(process:3173): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(process:3321): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(process:3532): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(nautilus:3579): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+
+(nautilus:3579): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+
+(nautilus:3579): Gtk-CRITICAL **: gtk_icon_theme_get_for_screen: assertion 'GDK_IS_SCREEN (screen)' failed
+
+(nautilus:3579): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(nautilus:3579): GLib-GObject-CRITICAL **: g_signal_connect_object: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(process:4169): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed

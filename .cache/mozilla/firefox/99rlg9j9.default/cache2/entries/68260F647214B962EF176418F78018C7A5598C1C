@@ -1,0 +1,1186 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Listing accounts and checking balances | Ethereum Frontier Guide</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="author" content="Ethereum">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-comment/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./sending_ether.html" />
+    
+    
+    <link rel="prev" href="./wallet.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="2.3" data-chapter-title="Listing accounts and checking balances" data-filepath="listing_accounts.md" data-basepath="." data-revision="Wed Oct 28 2015 11:00:57 GMT+0000 (UTC)">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+                
+                <li>
+                    <a href="https://www.gitbook.com/book/ethereum/frontier-guide" target="blank" class="custom-link">Ethereum Frontier Guide</a>
+                </li>
+            
+            
+
+            
+            <li class="divider"></li>
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="0.1" data-path="ethereum.html">
+            
+                
+                    <a href="./ethereum.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.1.</b>
+                        
+                        What is ethereum?
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="0.2" data-path="frontier.html">
+            
+                
+                    <a href="./frontier.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.2.</b>
+                        
+                        The Frontier Release
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="0.3" data-path="disclaimer.html">
+            
+                
+                    <a href="./disclaimer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.3.</b>
+                        
+                        Disclaimer
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="0.4" data-path="overview.html">
+            
+                
+                    <a href="./overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.4.</b>
+                        
+                        Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="0.5" data-path="license.html">
+            
+                
+                    <a href="./license.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.5.</b>
+                        
+                        License
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="0.6" data-path="contributors.html">
+            
+                
+                    <a href="./contributors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.6.</b>
+                        
+                        Contributors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="0.7" data-path="help.html">
+            
+                
+                    <a href="./help.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.7.</b>
+                        
+                        Help
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="0.8" data-path="developers.html">
+            
+                
+                    <a href="./developers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.8.</b>
+                        
+                        Developers&#39; Entry
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="getting_a_client.html">
+            
+                
+                    <a href="./getting_a_client.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Installing and running a node
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="platforms.html">
+            
+                
+                    <a href="./platforms.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Platforms
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="installing_linux.html">
+            
+                
+                    <a href="./installing_linux.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        Linux
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="installing_mac.html">
+            
+                
+                    <a href="./installing_mac.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        Mac
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="installing_windows.html">
+            
+                
+                    <a href="./installing_windows.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.3.</b>
+                        
+                        Windows
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="using_docker.html">
+            
+                
+                    <a href="./using_docker.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.4.</b>
+                        
+                        Docker
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="installing_arm.html">
+            
+                
+                    <a href="./installing_arm.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.5.</b>
+                        
+                        ARM
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="backup_restore.html">
+            
+                
+                    <a href="./backup_restore.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Backup &amp; restore
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="connecting.html">
+            
+                
+                    <a href="./connecting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Connecting to the network
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="netstats.html">
+            
+                
+                    <a href="./netstats.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Monitoring your nodes
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="cluster.html">
+            
+                
+                    <a href="./cluster.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Setting up a cluster
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="managing_accounts.html">
+            
+                
+                    <a href="./managing_accounts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Managing accounts
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="creating_accounts.html">
+            
+                
+                    <a href="./creating_accounts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Creating accounts
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="wallet.html">
+            
+                
+                    <a href="./wallet.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Importing your presale wallet
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="listing_accounts.html">
+            
+                
+                    <a href="./listing_accounts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Listing accounts and checking balances
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="sending_ether.html">
+            
+                
+                    <a href="./sending_ether.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Sending ether
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> Mining</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="mining.html">
+            
+                
+                    <a href="./mining.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="mining_with_geth.html">
+            
+                
+                    <a href="./mining_with_geth.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        CPU mining with geth
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="gpu.html">
+            
+                
+                    <a href="./gpu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        GPU mining
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="interfaces.html">
+            
+                
+                    <a href="./interfaces.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Interfaces
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="cli.html">
+            
+                
+                    <a href="./cli.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Command line interface and options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="rpc.html">
+            
+                
+                    <a href="./rpc.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        JSON RPC API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="web3.html">
+            
+                
+                    <a href="./web3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        JavaScript API for √êapps
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="jsre.html">
+            
+                
+                    <a href="./jsre.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        JavaScript Console
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="contracts_and_transactions_intro.html">
+            
+                
+                    <a href="./contracts_and_transactions_intro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Contracts and transactions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="account_types.html">
+            
+                
+                    <a href="./account_types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Account types and transactions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="ether_transfer.html">
+            
+                
+                    <a href="./ether_transfer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Ether transfer
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="writing_contract.html">
+            
+                
+                    <a href="./writing_contract.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        Writing a contract
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="compiling_contract.html">
+            
+                
+                    <a href="./compiling_contract.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Compiling a contract
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="creating_contract.html">
+            
+                
+                    <a href="./creating_contract.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        Creating and deploying a contract
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="costs.html">
+            
+                
+                    <a href="./costs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Gas and transaction costs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="interacting_contract.html">
+            
+                
+                    <a href="./interacting_contract.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        Interacting with contracts
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="contract_info.html">
+            
+                
+                    <a href="./contract_info.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        Contract info (metadata)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="natspec.html">
+            
+                
+                    <a href="./natspec.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        NatSpec
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="testing_contracts_and_transactions.html">
+            
+                
+                    <a href="./testing_contracts_and_transactions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.10.</b>
+                        
+                        Testing contracts and transactions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="registrar_services.html">
+            
+                
+                    <a href="./registrar_services.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.11.</b>
+                        
+                        Registrar services
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="example_script.html">
+            
+                
+                    <a href="./example_script.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.12.</b>
+                        
+                        Example script
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="contract_tutorials.html">
+            
+                
+                    <a href="./contract_tutorials.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.13.</b>
+                        
+                        Contract tutorials
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.13.1" data-path="contract_greeter.html">
+            
+                
+                    <a href="./contract_greeter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.13.1.</b>
+                        
+                        Greeter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13.2" data-path="contract_namereg.html">
+            
+                
+                    <a href="./contract_namereg.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.13.2.</b>
+                        
+                        Registrars
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13.3" data-path="contract_coin.html">
+            
+                
+                    <a href="./contract_coin.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.13.3.</b>
+                        
+                        Coin contract
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13.4" data-path="contract_crowdfunder.html">
+            
+                
+                    <a href="./contract_crowdfunder.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.13.4.</b>
+                        
+                        Crowdfunder
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13.5" data-path="contract_democracy.html">
+            
+                
+                    <a href="./contract_democracy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.13.5.</b>
+                        
+                        Democracy DAO
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" >
+            
+            <span><b>6.</b> [Technical specification]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="eth_spec.html">
+            
+                
+                    <a href="./eth_spec.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Ethereum specification
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="devp2p.html">
+            
+                
+                    <a href="./devp2p.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        DevP2P protocol spec
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="contractinfo.html">
+            
+                
+                    <a href="./contractinfo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        Contract info (metadata)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="abi.html">
+            
+                
+                    <a href="./abi.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        ABI: Application Binary Interface
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="solidity.html">
+            
+                
+                    <a href="./solidity.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        Solidity
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="opcodes,_costs,_and_gas.html">
+            
+                
+                    <a href="./opcodes,_costs,_and_gas.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        Opcodes, costs, and gas
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Ethereum Frontier Guide</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="listing-accounts-and-checking-balances">Listing accounts and checking balances</h1>
+<h3 id="listing-your-current-accounts">Listing your current accounts</h3>
+<p>From the command line, call the CLI with:</p>
+<pre><code>$ geth account list
+Account #0: {d1ade25ccd3d550a7eb532ac759cac7be09c2719}
+Account #1: {da65665fc30803cb1fb7e6d86691e20b1826dee0}
+Account #2: {e470b1a7d2c9c5c6f03bbaa8fa20db6d404a0c32}
+Account #3: {f4dd5c3794f1fd0cdc0327a83aa472609c806e99}
+</code></pre><p>to list your accounts in order of creation. </p>
+<p><strong>Note</strong>:
+This order can change if you copy keyfiles from other nodes, so make sure you either do not rely on indexes or make sure if you copy keys you check and update your account indexes in your scripts. </p>
+<p>When using the console:</p>
+<pre><code>&gt; eth.accounts
+[&apos;0x407d73d8a49eeb85d32cf465507dd71d507100c1&apos;]
+</code></pre><p>or via RPC:</p>
+<pre><code># Request
+$ curl -X POST --data &apos;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_accounts&quot;,&quot;params&quot;:[],&quot;id&quot;:1} http://127.0.0.1:8545&apos;
+
+# Result
+{
+  &quot;id&quot;:1,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: [&quot;0x407d73d8a49eeb85d32cf465507dd71d507100c1&quot;]
+}
+</code></pre><p>If you want to use an account non-interactively, you need to unlock it. You can do this on the command line with the <code>--unlock</code> option which takes a whitespace separated list of accounts (in hex or index) as argument so you can unlock the accounts programmatically for one session. This is useful if you want to use your account from Dapps via RPC. <code>--unlock</code> will unlock the first account. This is useful when you created your account programmatically, you do not need to know the actual account to unlock it.</p>
+<p>Unlocking one account:</p>
+<pre><code>geth --password &lt;(echo this is not secret!) account new 
+geth --password &lt;(echo this is not secret!) --unlock primary --rpccorsdomain localhost --verbosity 6 2&gt;&gt; geth.log
+</code></pre><p>Instead of the account address, you can use integer indexes which refers to the address position in the account listing (and corresponds to order of creation)</p>
+<p>The command line allows you to unlock multiple accounts. In this case the argument to unlock is a whitespace delimited list of accounts addresses or indexes. </p>
+<pre><code>geth --unlock &quot;0x407d73d8a49eeb85d32cf465507dd71d507100c1 0 5 e470b1a7d2c9c5c6f03bbaa8fa20db6d404a0c32&quot;
+</code></pre><p>If this construction is used non-interactively, your password file will need to contain the respective passwords for the accounts in question, one per line. </p>
+<p>On the console you can also unlock accounts (one at a time). </p>
+<pre><code>personal.unlockAccount(address, &quot;password&quot;)
+</code></pre><p>Note that we do NOT recommend using the password argument here, since the console history is logged, so you may compromise your account. You have been warned. </p>
+<h3 id="checking-account-balances">Checking account balances</h3>
+<p>To check your the etherbase account balance:</p>
+<pre><code>&gt; web3.fromWei(eth.getBalance(eth.coinbase), &quot;ether&quot;)
+6.5
+</code></pre><p>Print all balances with a JavaScript function:</p>
+<pre><code>function checkAllBalances() { 
+var i =0; 
+eth.accounts.forEach( function(e){
+     console.log(&quot;  eth.accounts[&quot;+i+&quot;]: &quot; +  e + &quot; \tbalance: &quot; + web3.fromWei(eth.getBalance(e), &quot;ether&quot;) + &quot; ether&quot;); 
+i++; 
+})
+};
+</code></pre><p>That can then be executed with:</p>
+<pre><code>&gt; checkAllBalances();
+  eth.accounts[0]: 0xd1ade25ccd3d550a7eb532ac759cac7be09c2719     balance: 63.11848 ether
+  eth.accounts[1]: 0xda65665fc30803cb1fb7e6d86691e20b1826dee0     balance: 0 ether
+  eth.accounts[2]: 0xe470b1a7d2c9c5c6f03bbaa8fa20db6d404a0c32     balance: 1 ether
+  eth.accounts[3]: 0xf4dd5c3794f1fd0cdc0327a83aa472609c806e99     balance: 6 ether
+</code></pre><p>Since this function will disappear after restarting geth, it can be helpful to store commonly used functions to be recalled later. The <a href="https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console#loadscript" target="_blank">loadScript</a> function makes this very easy.</p>
+<p>First, save the <code>checkAllBalances()</code> function definition to a file on your computer. For example, <code>/Users/username/gethload.js</code>. Then load the file from the interactive console:</p>
+<pre><code>&gt; loadScript(&quot;/Users/username/gethload.js&quot;)
+true
+</code></pre><p>The file will modify your JavaScript environment as if you has typed the commands manually. Feel free to experiment!</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./wallet.html" class="navigation navigation-prev " aria-label="Previous page: Importing your presale wallet"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./sending_ether.html" class="navigation navigation-next " aria-label="Next page: Sending ether"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-comment/plugin.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"sections":{},"comment":{},"autocover":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    
+<div><script style="display: none;" type="application/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57505611-7', 'auto', {name: 'microcdn'});
+  ga('microcdn.send', 'pageview');
+
+  var _cdn_prev_loc = window.location.pathname;
+  window.setInterval(function () {
+    if (window.location.pathname !== _cdn_prev_loc) {
+      _cdn_prev_loc = window.location.pathname;
+      ga('microcdn.send', 'pageview');
+    }
+  }, 100);
+
+</script></div>
+</body>
+    
+</html>
+h.øN§      Zê·zZê·≠>∆àÂZê·}   J    :https://ethereum.gitbooks.io/frontier-guide/content/listing_accounts.html necko:classified 1 security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojH6pBabDSgSnsfLHeAAQAAgAAAAAAAAAAAAAAAAAAAAAB4vFIJp5wRkeyPxAQ9RJGKPqbqVvKO0mKuIl8ec8o/uhmCjImkVxP+7sgiYWmMt8F+O2DZM7ZTG6GukivU8OT5gAAAAAAAAUxMIIFLTCCBBWgAwIBAgIJAK8gzpzuEJmjMA0GCSqGSIb3DQEBCwUAMIG0MQswCQYDVQQGEwJVUzEQMA4GA1UECBMHQXJpem9uYTETMBEGA1UEBxMKU2NvdHRzZGFsZTEaMBgGA1UEChMRR29EYWRkeS5jb20sIEluYy4xLTArBgNVBAsTJGh0dHA6Ly9jZXJ0cy5nb2RhZGR5LmNvbS9yZXBvc2l0b3J5LzEzMDEGA1UEAxMqR28gRGFkZHkgU2VjdXJlIENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTE3MDkwOTEwMDUwMFoXDTE4MDkwOTEwMDUwMFowOzEhMB8GA1UECxMYRG9tYWluIENvbnRyb2wgVmFsaWRhdGVkMRYwFAYDVQQDDA0qLmdpdGJvb2tzLmlvMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxjy2ZpDtcsgdt8W89c5xJbtUyEscUBMtoC4Tkj6zyMOVjoyFHqUlFsyictbbuUlcxqWii4s5UvaqT1bC7Wgm5ea+8IGoCXaahih41eAuZJ7Kzb1WPzlISgqrKL1GGT/nrOC/w+459KuZZUnEA6lx22r2ThwNqQW8y+vYKvHCHpGqTNha/wKM9SJE77EqiSNl9DC0t2THfSadgygOyvH1RRLTcffcuQ28TknUJMFl6mFG2K6nll1sZ8xL0LS9mPnKMWcZd0uD1Nh95k1Tt52PMB0AlWYchJc01hBK5/99I2/zf+vQl1Ddywgq2UabbesYJUEwf3bQOPEwxeVGXViHBwIDAQABo4IBuDCCAbQwDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgWgMDcGA1UdHwQwMC4wLKAqoCiGJmh0dHA6Ly9jcmwuZ29kYWRkeS5jb20vZ2RpZzJzMS02ODkuY3JsMF0GA1UdIARWMFQwSAYLYIZIAYb9bQEHFwEwOTA3BggrBgEFBQcCARYraHR0cDovL2NlcnRpZmljYXRlcy5nb2RhZGR5LmNvbS9yZXBvc2l0b3J5LzAIBgZngQwBAgEwdgYIKwYBBQUHAQEEajBoMCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5nb2RhZGR5LmNvbS8wQAYIKwYBBQUHMAKGNGh0dHA6Ly9jZXJ0aWZpY2F0ZXMuZ29kYWRkeS5jb20vcmVwb3NpdG9yeS9nZGlnMi5jcnQwHwYDVR0jBBgwFoAUQMK9J47MNIMwojPX+2yz8LQsgM4wJQYDVR0RBB4wHIINKi5naXRib29rcy5pb4ILZ2l0Ym9va3MuaW8wHQYDVR0OBBYEFLc2RmeZePdeA2SZoYpg9eUJh43yMA0GCSqGSIb3DQEBCwUAA4IBAQCOJ5mXJIKhACPLjqfpRa1lxWy1KDe0Ws/MQEtvNTQCPTevBP/NdP5QRLWju850OdrNG0gDceI9Kk37ztkVVkWLR5m8/n60K5rUtOJ5x6ewlkgtuI6aD3dViLPjpFTQ5myHE2Jd01qmm98o7H0Wp1c878d7sFHyHuc6QtjinR+3yuthNKNspxaPDTPnWg8jjIcod9iRZcc67Wj3kB/oIRHlQz97QTAnCKMDcpHccAcnWlvUuq0LTK66R6q4MTABhu/HRwie1Fb9dgDUQVEqtzx4gvomcHJq9I+7UWHla0ajgofutXKNMEzffElCxSvFMtTqPcpvCYd6CwK9EZYnPyjIwC8AAwAAAAABAQAA request-method GET request-Accept-Encoding gzip, deflate, br response-head HTTP/2.0 200 OK
+Age: 4318
+Content-Encoding: identity
+Content-Type: text/html; charset=UTF-8
+Etag: W/"ec21562bca7c0f07d62a7241d05c66b1"
+Last-Modified: Sat, 24 Feb 2018 02:40:30 GMT
+Vary: Accept-Encoding
+X-Cache: HIT
+x-cdn-cache-group: ethereum/frontier-guide
+Date: Sat, 24 Feb 2018 03:52:28 GMT
+X-Firefox-Spdy: h2
+ charset UTF-8 predictor::resource-count 15 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/style.css 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/plugins/gitbook-plugin-comment/plugin.css 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/plugins/gitbook-plugin-highlight/website.css 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/plugins/gitbook-plugin-search/search.css 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/plugins/gitbook-plugin-fontsettings/website.css 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/app.js 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/plugins/gitbook-plugin-comment/plugin.js 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/plugins/gitbook-plugin-search/lunr.min.js 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/plugins/gitbook-plugin-search/search.js 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/plugins/gitbook-plugin-sharing/buttons.js 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/plugins/gitbook-plugin-fontsettings/buttons.js 1,1,1519444346,0 predictor::https://ethereum.gitbooks.io/frontier-guide/content/gitbook/fonts/fontawesome/fontawesome-webfont.woff?v=4.1.0 1,1,1519444346,0 predictor::https://www.google-analytics.com/analytics.js 1,1,1519444346,0 predictor::https://www.google-analytics.com/r/collect?v=1&_v=j66&a=377638282&t=pageview&_s=1&dl=https%3A%2F%2Fethereum.gitbooks.io%2Ffrontier-guide%2Fcontent%2Flisting_accounts.html&dr=https%3A%2F%2Fwww.google.co.in&ul=en-us&de=UTF-8&dt=Listing%20accounts%20and%20checking%20balances%20%7C%20Ethereum%20Frontier%20Guide&sd=24-bit&sr=1366x768&vp=1301x673&je=0&_u=IEBAAEAB~&jid=887184285&gjid=828753146&cid=2024614853.1519444350&tid=UA-57505611-7&_gid=1386336576.1519444350&_r=1&z=303845511 1,1,1519444346,0 predictor::https://www.google-analytics.com/collect?v=1&_v=j66&a=377638282&t=pageview&_s=3&dl=https%3A%2F%2Fethereum.gitbooks.io%2Ffrontier-guide%2Fcontent%2Flisting_accounts.html&dr=https%3A%2F%2Fwww.google.co.in&ul=en-us&de=UTF-8&dt=Importing%20your%20presale%20wallet%20%7C%20Ethereum%20Frontier%20Guide&sd=24-bit&sr=1366x768&vp=1301x673&je=0&_u=KEBAAEAB~&jid=&gjid=&cid=2024614853.1519444350&tid=UA-57505611-7&_gid=1386336576.1519444350&z=1498933944 1,1,1519444346,0   å·
